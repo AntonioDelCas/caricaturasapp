@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Caricaturas</title>
+    <meta name="description" content="Caricaturas">
+    <meta name="author" content="Amarreapp">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="plugins/font-awesome-4.3.0/css/font-awesome.min.css">
+
+    <!--<link href="plugins/select-master/pqselect.min.css" rel="stylesheet">-->
+    <!--<link href="plugins/textareaeditor/editor.css" rel="stylesheet">-->
+
+	<link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/pnotify.custom.min.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	    <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+		<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+	<![endif]-->
+
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+
+    <!--<script src="plugins/textareaeditor/editor.js"></script>-->
+    <!--<script src="plugins/select-master/pqselect.min.js"></script>-->
+
+    <!-- All functions for this theme + document.ready processing -->
+
+    <script type="text/javascript" src="./js/pnotify.custom.min.js"></script>
+    <script src="./js/funciones.js"></script>
+    <script src="./js/general.js"></script>
+
+    <!--<script src="./js/comunicados.js"></script>-->
+    <!--<script src="./js/upload.js"></script>-->
+
+    <script type="text/javascript" src="./js/sessvars.js"></script>
+    <!--<script type="text/javascript">
+        sessvars.$.debug();
+    </script>-->
+    <script src="./js/devoops.js"></script>
+
+    <!-- AMAZON -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.19.min.js"></script>
+    <script type="text/javascript">
+      // See the Configuring section to configure credentials in the SDK
+      AWS.config.credentials = ...;
+
+      // Configure your region
+      AWS.config.region = 'Europe(Ireland)';
+    </script>
+
+
+	</head>
+
+<body>
+<body onload="validaSes(sessvars);">
+
+<div id="modalbox">
+	<div class="devoops-modal">
+		<div class="devoops-modal-header">
+			<div class="modal-header-name">
+				<span>Basic table</span>
+			</div>
+			<div class="box-icons">
+				<a class="close-link">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+		</div>
+		<div class="devoops-modal-inner">
+		</div>
+		<div class="devoops-modal-bottom">
+		</div>
+	</div>
+</div>
+
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+
+		<div class="row">
+			<div id="logo" class="col-xs-3 col-sm-3">
+				<!--<a href="index.html">SNNCloud</a>-->
+			</div>
+			<div id="top-panel" class="col-xs-9 col-sm-9">
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 top-panel-right">
+
+						<ul class="nav navbar-nav pull-right panel-menu">
+
+                            <li id="imagenservicios" class="hidden-xs" style="display: none;">
+                                <a href="html/servicios.html" class="ajax-link">
+                                    <i class="fa fa-plug"></i>
+                                    <span class="badge"  id="cabeceraservicios"></span>
+                                </a>
+                            </li>
+
+                            <li id="imagennoleidos" class="hidden-xs" style="display: none;">
+                                <a href="html/entrada.html" class="ajax-link">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="badge" id="cabeceranoleidos"></span>
+                                </a>
+                            </li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+									<div class="avatar">
+										<img src="img/avatar.jpg" class="img-circle" alt="avatar" />
+									</div>
+									<i class="fa fa-angle-down pull-right"></i>
+									<div class="user-mini pull-right">
+										<span class="welcome">Bienvenido,</span>
+										<span id="user">-</span>
+									</div>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a onclick="logOut()" href="#">
+											<i class="fa fa-power-off"></i>
+											<span>Logout</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!--End Header-->
+
+
+<!--Start Container-->
+<div id="main" class="container-fluid">
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="home.html">
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Inicio</span>
+					</a>
+				</li>
+                <li>
+                    <a class="ajax-link" href="html/misdatos.html">
+                        <i class="fa fa-user"></i>
+                        <span class="hidden-xs">Mis datos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="ajax-link" href="html/caricaturas.html">
+                        <i class="fa fa-plug"></i>
+                        <span class="hidden-xs">Caricaturas</span>
+                    </a>
+                </li>
+
+			</ul>
+		</div>
+
+
+
+		<!--Start Content-->
+		<div id="content" class="col-xs-12 col-sm-10">
+			<div class="preloader">
+				<img src="img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
+			</div>
+
+			<div id="ajax-content"></div>
+		</div>
+		<!--End Content-->
+	</div>
+</div>
+
+<script>
+    PNotify.prototype.options.delay = 2000;
+ </script>
+
+</body>
+</html>

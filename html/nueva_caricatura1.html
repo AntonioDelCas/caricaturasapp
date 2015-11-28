@@ -1,0 +1,48 @@
+<!-- <input type="file" id="file-chooser" /> 
+<button id="upload-button">Upload to S3</button>
+<div id="results"></div>
+
+<script type="text/javascript">
+  var bucket = new AWS.S3({params: {Bucket: 'antoniopuebas'}});
+
+  var fileChooser = document.getElementById('file-chooser');
+  var button = document.getElementById('upload-button');
+  var results = document.getElementById('results');
+  button.addEventListener('click', function() {
+    var file = fileChooser.files[0];
+    if (file) {
+      results.innerHTML = '';
+
+      var params = {Key: file.name, ContentType: file.type, Body: file};
+      bucket.upload(params, function (err, data) {
+        results.innerHTML = err ? 'ERROR!' : 'UPLOADED.';
+      });
+    } else {
+      results.innerHTML = 'Nothing to upload.';
+    }
+  }, false);
+</script>
+-->
+
+
+
+
+
+
+<!-- antoniopruebas.s3-website-eu-west-1.amazonaws.com -->
+<form action="https://s3-bucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/silueta.jpg">
+      <!-- <input type="hidden" name="key" value="uploads/${filename}"> -->
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAJNC4CIHRDOPQTENQ"> 
+      <input type="hidden" name="acl" value="public"> 
+      <input type="hidden" name="success_action_redirect" value="http://localhost:8080/caricaturas/home.html">
+      <input type="hidden" name="policy" value="YOUR_POLICY_DOCUMENT_BASE64_ENCODED">
+      <input type="hidden" name="signature" value="YOUR_CALCULATED_SIGNATURE">
+      <input type="hidden" name="Content-Type" value="image/jpeg">
+      <!-- Include any additional input fields here -->
+
+      File to upload to S3: 
+      <input name="file" type="file"> 
+      <br> 
+      <input type="submit" value="Upload File to S3"> 
+    </form> 

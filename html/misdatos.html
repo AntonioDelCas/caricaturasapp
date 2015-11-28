@@ -1,0 +1,167 @@
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left">
+			<li><a href="home.html">Inicio</a></li>
+            <li><a href="#">Mis datos</a></li>
+		</ol>
+	</div>
+</div>
+<h4 class="page-header">Mis datos</h4>
+
+
+<!-- Ventana Modal -->
+<div class="modal fade" id="cambiarPass" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Cambiar contraseña</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                <label class="control-label">Contraseña actual</label>
+                <input type="password" class="form-control" name="passactual" id="passactual"/>
+                </div>
+
+                <div class="form-group">
+                <label class="control-label">Nueva Contraseña</label>
+                <input type="password" class="form-control" name="passnueva" id="passnueva"/>
+                </div>
+
+                <div class="form-group">
+                <label class="control-label">Confirme Contraseña</label>
+                <input type="password" class="form-control" name="passnueva1" id="passnueva1"/>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="buttonCambiaPass" class="btn btn-success" data-dismiss="modal" onclick="CambiaPass();">Modificar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="box-content">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Usuario</label>
+                <div class="col-sm-4">
+                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" data-toggle="tooltip" data-placement="bottom" title="Nombre de Usuario" disabled>
+                </div>
+
+                <div id="changepass" class="col-sm-3" style="display:none;">
+                     <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#cambiarPass">
+                        Cambiar contraseña
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="nombre" name="nombre" class="form-control" placeholder="Nombre" data-toggle="tooltip" data-placement="bottom" title="Nombre" disabled>
+                </div>
+
+                <label class="col-sm-2 control-label">Apellidos</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" data-toggle="tooltip" data-placement="bottom" title="Apellidos" disabled>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <!--<label class="col-sm-2 control-label">Empresa</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="empresa" name="empresa" class="form-control" placeholder="Empresa" data-toggle="tooltip" data-placement="bottom" title="Empresa" disabled>
+                </div>-->
+
+                <label class="col-sm-2 control-label">Correo-e</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="correoe" name="correoe" class="form-control" placeholder="Correo-e" data-toggle="tooltip" data-placement="bottom" title="Correo-e" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Dirección</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Dirección" data-toggle="tooltip" data-placement="bottom" title="Dirección" disabled>
+                </div>
+
+                <label class="col-sm-2 control-label">Ciudad</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" data-toggle="tooltip" data-placement="bottom" title="Ciudad" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Código Postal</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="codigopostal" name="codigopostal" class="form-control" placeholder="Código Postal" data-toggle="tooltip" data-placement="bottom" title="Código Postal" disabled>
+                </div>
+
+                <label class="col-sm-2 control-label">País</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="pais" name="pais" class="form-control" placeholder="País" data-toggle="tooltip" data-placement="bottom" title="País" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Teléfono</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="telefono" name="telefono" class="form-control" placeholder="Teléfono" data-toggle="tooltip" data-placement="bottom" title="Teléfono" disabled>
+                </div>
+            </div>
+
+            <legend></legend>
+            <!--<div class="form-group">
+               <label class="col-sm-2 control-label">Fecha Creación</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="fcreacion" name="fcreacion" class="form-control" placeholder="Fecha Activación" data-toggle="tooltip" data-placement="bottom" title="Fecha Activación" disabled>
+                </div>
+            </div>-->
+
+            <div class="form-group">
+               <!--<label class="col-sm-2 control-label">Fecha Activación</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="factivacion" name="factivacion" class="form-control" placeholder="Fecha Activación" data-toggle="tooltip" data-placement="bottom" title="Fecha Activación" disabled>
+                </div>-->
+
+                <label class="col-sm-2 control-label">Código Artista</label>
+                <div class="col-sm-4">
+                    <input type="text"  id="codartista" name="codartista" class="form-control" placeholder="Código Artista" data-toggle="tooltip" data-placement="bottom" title="Código Artista" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-sm-2 control-label">Último acceso</label>
+                <div class="col-sm-4">
+                    <input type="text" id="ultimoacceso" name="ultimoacceso" class="form-control" placeholder="-" data-toggle="tooltip" data-placement="bottom" title="Último acceso" disabled>
+                </div>
+            </div>
+
+
+        </form>
+
+        <footer>
+            <legend></legend>
+               <div class="btn-group col-xs-12">
+                   <a class="btn btn-default btn-label-left pull-right" id="editar" onclick="editar_datosCliente()"><span><i class="fa fa-file-text-o"></i></span> Editar</a>
+                   <a class="btn btn-success btn-label-left pull-right" id="guardar" onclick="guardar_datosCliente()" style="display:none;"><span><i class="fa fa-save"></i></span> Guardar</a>
+                   <a class="btn btn-default btn-label-left pull-right" id="cancelar" onclick="cancelar_datosCliente()" style="display:none;"><span><i class="fa fa-times"></i></span> Cancelar</a>
+           </div>
+        </footer>
+
+    </div>
+
+
+</div>

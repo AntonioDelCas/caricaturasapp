@@ -1,0 +1,73 @@
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left">
+			<li><a href="home.html">Inicio</a></li>
+            <li><a class="ajax-link" href="#html/caricaturas.html" onclick="LoadAjaxContent('html/caricaturas.html')">Caricaturas</a></li>
+            <li><a href="#">Nueva Caricatura</a></li>
+		</ol>
+	</div>
+</div>
+<h4 class="page-header">Datos de la Caricatura</h4>
+
+
+<script>
+    $(function(){
+        $("input[name='file']").on("change", function(){
+            /*var formData = new FormData($("#formulario")[0]);
+            var ruta = "http://lit-woodland-9635.herokuapp.com/subir_s3/";
+
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                crossDomain: true,
+                data: formData,
+                contentType: false,
+                processData: false,
+
+                callback: 'None',
+                //contentType: "application/json",
+                //dataType: 'jsonp',
+
+
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });*/
+            subirS3();
+        });
+    });
+</script>
+
+
+
+<div class="row">
+
+    <div class="box-content">
+
+        <form method="post" id="formulario" enctype="multipart/form-data">
+            Subir imagen: <input type="file" name="file">
+        </form>
+        <div id="respuesta"></div>
+
+
+
+
+
+
+       <!-- <footer>
+            <legend></legend>
+               <div class="btn-group col-xs-12">
+
+                   <a class="btn btn-success btn-label-left pull-right" id="guardar" onclick="guardar_datosCaricatura()"><span><i class="fa fa-save"></i></span> Guardar</a>
+                   <a class="btn btn-default btn-label-left pull-right" id="cancelar" onclick="cancelar_datosCaricatura()"><span><i class="fa fa-times"></i></span> Cancelar</a>
+           </div>
+        </footer>-->
+
+    </div>
+
+
+</div>
